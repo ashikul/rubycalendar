@@ -73,10 +73,10 @@ class TestExample < Minitest::Test
       }
     )
 
-    output_events_one = <<~STRING
+    OUTPUT_ALL_EVENTS = <<~STRING
     # Cathy's Party
-    # ...Starts: August 04, 2017 at 08:00 pm
-    # ...Ends: August 04, 2017 at 11:59 am
+    # ...Starts: August 4, 2017 at 08:00 pm
+    # ...Ends: August 4, 2017 at 11:59 pm
     # ...Location: Barcade, 148 W 24th St, New York, NY, 10011
     # ---------------------------------------------------------------------
     # Brunch with Friends
@@ -104,9 +104,10 @@ class TestExample < Minitest::Test
     # ---------------------------------------------------------------------
     STRING
 
-    assert_equal output_events_one, cal.events.map(&:to_s).join('')
+    assert_equal OUTPUT_ALL_EVENTS, cal.events.map(&:to_s).join('')
 
-
+    OUTPUT_ = <<~STRING
+    STRING
  
   end
 
