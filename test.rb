@@ -23,17 +23,17 @@ class TestExample < Minitest::Test
 
     cal = Calendar.new("Test")
 
-    #empty calendar name
+    #Empty calendar name
     assert_raises ArgumentError do  
       cal2 = Calendar.new()
     end
 
-    #empty event
+    #Empty event
     assert_raises ArgumentError do  
       cal.add_event() 
     end
 
-    #empty location params
+    #Empty location params
     assert_raises ArgumentError do  
       cal.add_event("Cathy's Party",             
           all_day: false,                           
@@ -43,7 +43,7 @@ class TestExample < Minitest::Test
       ) 
     end
 
-    #missing end_time param since all day is false
+    #Missing end_time param since all day is false
     assert_raises ArgumentError do  
       cal.add_event("Cathy's Party",             
           all_day: false,                           
@@ -51,7 +51,7 @@ class TestExample < Minitest::Test
       ) 
     end
 
-    #start_time > end_time
+    #Start_time > end_time
     assert_raises ArgumentError do  
       cal.add_event("Cathy's Party",             
           all_day: false,                           
@@ -60,7 +60,7 @@ class TestExample < Minitest::Test
       ) 
     end
 
-    #invalid date parsed
+    #Invalid date parsed
     assert_raises ArgumentError do  
       cal.add_event("Cathy's Party",             
           all_day: true,                           

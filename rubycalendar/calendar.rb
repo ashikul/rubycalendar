@@ -29,7 +29,7 @@ class Calendar
     if matching_events
       return matching_events
     else
-      raise ArgumentError.new("No event found with name: #{name}") 
+      raise ArgumentError, "No event found with name: #{name}"
     end
   end
 
@@ -42,7 +42,7 @@ class Calendar
   end
 
   def events_for_this_week
-    @events.select { |event| event.is_this_event_within_a_week? }
+    @events.select(&:is_this_event_within_a_week?)
   end
 
   def update_events(name, params = {})

@@ -8,9 +8,9 @@ ruby gems required: chronic, activesupport, date, minitest
 
 ## Usage
 
-run `ruby example.rb` to see an example output
-
 to use the calendar class, `require './rubycalendar/calendar'`
+
+run `ruby example.rb` to see an example output
 
 ## Tests
 

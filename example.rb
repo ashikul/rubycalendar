@@ -4,67 +4,61 @@ require './rubycalendar/calendar'
 
 cal = Calendar.new("Cathy's Calendar")
 
-cal.add_event("Cathy's Party",             # name is required
-  all_day: false,                          # all_day is optional (defaults to false)
-  start_time: Time.new(2017, 8, 4, 20, 0), # start_time is required
-  end_time: Time.new(2017, 8, 4, 23, 59),  # end_time is required UNLESS all_day is true
-  location: {                              # location is optional
-    name: 'Barcade',                         # name is required
-    address: '148 W 24th St',                # address is optional
-    city: 'New York',                        # city is optional
-    state: 'NY',                             # state is optional
-    zip: '10011'                             # zip is optional
-  }
-)
+cal.add_event("Cathy's Party", # name is required
+              all_day: false,                          # all_day is optional (defaults to false)
+              start_time: Time.new(2017, 8, 4, 20, 0), # start_time is required
+              end_time: Time.new(2017, 8, 4, 23, 59),  # end_time is required UNLESS all_day is true
+              location: {                              # location is optional
+                name: 'Barcade',                         # name is required
+                address: '148 W 24th St',                # address is optional
+                city: 'New York',                        # city is optional
+                state: 'NY',                             # state is optional
+                zip: '10011'                             # zip is optional
+              })
 
 cal.add_event('Brunch with Friends',
-  start_time: Time.new(2017, 8, 5, 11, 30),
-  end_time: Time.new(2017, 8, 5, 13, 0),
-  location: {
-    name: "Jack's Wife Freda",
-    address: '224 Lafayette St',
-    city: 'New York',
-    state: 'NY',
-    zip: '10012'
-  }
-)
+              start_time: Time.new(2017, 8, 5, 11, 30),
+              end_time: Time.new(2017, 8, 5, 13, 0),
+              location: {
+                name: "Jack's Wife Freda",
+                address: '224 Lafayette St',
+                city: 'New York',
+                state: 'NY',
+                zip: '10012'
+              })
 
 cal.add_event('Dog Walking',
-  start_time: Time.new(2017, 8, 5, 15, 30),
-  end_time: Time.new(2017, 8, 5, 16, 30),
-  location: {
-    name: 'Brooklyn Paws, Inc.',
-    address: '110 York St',
-    city: 'Brooklyn',
-    state: 'NY',
-    zip: '11201'
-  }
-)
+              start_time: Time.new(2017, 8, 5, 15, 30),
+              end_time: Time.new(2017, 8, 5, 16, 30),
+              location: {
+                name: 'Brooklyn Paws, Inc.',
+                address: '110 York St',
+                city: 'Brooklyn',
+                state: 'NY',
+                zip: '11201'
+              })
 
 cal.add_event("Andy Warhol's Birthday",
-  all_day: true,
-  start_time: 22
-)
+              all_day: true,
+              start_time: 22)
 
 cal.add_event('Cipherhealth Interview',
-  start_time: Time.new(2017, 8, 8, 14, 00),
-  end_time: Time.new(2017, 8, 8, 15, 30),
-  location: {
-    name: 'Cipherhealth',
-    address: '555 8th Ave',
-    city: 'New York',
-    state: 'NY',
-    zip: '10018'
-  }
-)
+              start_time: Time.new(2017, 8, 8, 14, 0o0),
+              end_time: Time.new(2017, 8, 8, 15, 30),
+              location: {
+                name: 'Cipherhealth',
+                address: '555 8th Ave',
+                city: 'New York',
+                state: 'NY',
+                zip: '10018'
+              })
 
 cal.add_event('VACATION!',
-  start_time: Time.new(2017, 8, 19, 10),
-  end_time: Time.new(2017, 8, 27, 14, 0),
-  location: {
-    name: 'Tulum, Mexico'
-  }
-)
+              start_time: Time.new(2017, 8, 19, 10),
+              end_time: Time.new(2017, 8, 27, 14, 0),
+              location: {
+                name: 'Tulum, Mexico'
+              })
 
 puts cal.events
 # Cathy's Party
@@ -122,9 +116,8 @@ puts cal.events_for_date('August 5th, 2017')
 # ...Location: Brooklyn Paws, Inc., 110 York St, Brooklyn, NY, 11201
 
 puts cal.update_events('Cipherhealth Interview',
-  start_time: Time.new(2017, 8, 8, 15, 00),
-  end_time: Time.new(2017, 8, 8, 16, 30)
-)
+                       start_time: Time.new(2017, 8, 8, 15, 0o0),
+                       end_time: Time.new(2017, 8, 8, 16, 30))
 # Cipherhealth Interview
 # ...Starts: August 8, 2017 at 03:00 pm
 # ...Ends: August 8, 2017 at 04:30 pm
