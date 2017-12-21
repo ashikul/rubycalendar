@@ -1,6 +1,15 @@
 require './rubycalendar/event'
 require 'date'
 
+# add_event(name, params) – Adds an event to the calendar.
+# events – Returns all events for the calendar.
+# events_with_name(name) – Returns events matching the given name.
+# events_for_date(date) – Returns events that occur during the given date.
+# events_for_today – Returns events that occur today.
+# events_for_this_week – Returns events that occur within the next 7 days.
+# update_events(name, params) – For all calendar events matching the given name, then update the event's attributes based on the given params.
+# remove_events(name) – Removes calendar events with the given name.
+
 class Calendar
   attr_reader :name, :events
 

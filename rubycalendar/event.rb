@@ -23,6 +23,24 @@ class Event
     set_location(params[:location]) unless params[:location].nil?
     
   end
+ 
+  def is_this_date_in_range?(date)
+    dateParsed = Chronic.parse(date, :guess => false)
+    raise ArgumentError.new("Date cannot be parsed" ) unless dateParsed
+
+    # Since guess is false, we don't assume the default time is assumed for a date
+    # and instead, we may get an array of dates from Chronic, as a span object
+    if dateParsed.class == Chronic::Span
+      return dateParsed.include?(@start_time) && dateParsed.include?(@end_time)
+    else
+      return dateParsed.between?(@start_time, @end_time)
+    end
+
+  end
+
+  def is_this_event_within_a_week?
+    @start_time.between?(Date.today, Date.today + 7)
+  end
 
   def to_s
     event_to_string = "# #{@name}\n" 
@@ -38,16 +56,6 @@ class Event
     
     event_to_string += "# ---------------------------------------------------------------------\n"
     event_to_string
-  end
- 
-  def is_this_date_in_range?(date)
-    dateParsed = Chronic.parse(date)
-    raise ArgumentError.new("Date cannot be parsed" ) unless date
-    dateParsed.between?(@start_time, @end_time)
-  end
-
-  def is_this_event_within_a_week?
-    @start_time.between?(Date.today, Date.today + 7)
   end
 
   private

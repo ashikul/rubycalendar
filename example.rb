@@ -1,5 +1,7 @@
 require './rubycalendar/calendar'
 
+# Example copied from the example app interaction
+
 cal = Calendar.new("Cathy's Calendar")
 
 cal.add_event("Cathy's Party",             # name is required
